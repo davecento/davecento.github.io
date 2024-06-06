@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>32nd Breakdown</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<h1>32nd Breakdown.</h1>
+	<div>
+		<label for="positionPicker">Choose a position:</label>
+		<select name="Position" id="positionPicker" onchange="createChart()">
+			<option value="QB1">QB1</option>
+			<option value="RB1">RB1</option>
+			<option value="RB2">RB2</option>
+			<option value="WR1">WR1</option>
+			<option value="WR2">WR2</option>
+			<option value="WR3">WR3</option>
+			<option value="TE1">TE1</option>
+		</select>
+		<br>
+		<label for="rec">Points per Reception:</label>
+		<input id="rec" type="number" min="0" max="1.5" step=".5" value=".5" SIZE="6" onchange="createChart()">
+		<br>
+		<label for="passTD">Points per Passing TD:</label>
+		<input id="passTD" type="number" min="4" max="6" step="2" value="4" SIZE="6" onchange="createChart()">
+		<br>
+		<label for="rush1D">Points per Rushing 1D:</label>
+		<input id="rush1D" type="number" min="0" max="1" step=".5" value="0" SIZE="6" onchange="createChart()">
+		<br>
+		<label for="rec1D">Points per Receiving 1D:</label>
+		<input id="rec1D" type="number" min="0" max="1" step=".5" value="0" SIZE="6" onchange="createChart()">
+		<br>
+		<label for="fL">Points per Fumble Lost:</label>
+		<input id="fL" type="number" min="-2" max="0" step=".5" value="0" SIZE="6" onchange="createChart()" disabled="disabled">
+		<text>Fumbles Lost are not currently available on a per-game basis in StatHead. This will be enabled as soon as that data is published.</text>
+		<br>
+		<label for="int">Points per Interception:</label>
+		<input id="int" type="number" min="-2" max="0" step=".5" value="-2" SIZE="6" onchange="createChart()">
+		<br>
+		<label for="startWeek">Start Week</label>
+		<input id="startWeek" type="number" min="1" max="18" step="1" value="1" SIZE="6" onchange="createChart()">
+		<br>
+		<label for="endWeek">End Week</label>
+		<input id="endWeek" type="number" min="1" max="18" step="1" value="18" SIZE="6" onchange="createChart()">
+		<br>
+		<br>
+		<canvas id="scoresChart" width="50px" height="100px"></canvas>
+	</div>
+	<p>Data sourced from <a href="https://stathead.com/football/">StatHead</a>.</p>
+	<script type="text/javascript" src="32nd-bd.js"></script>
+</body>
+</html>
