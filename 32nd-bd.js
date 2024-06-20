@@ -313,7 +313,8 @@ async function createChart() {
                     maxTicksLimit:60,
                     font: {
                         size:15,
-                        }
+                        },
+                    stepSize:1,
                     },
                 grid:{
                     display:false
